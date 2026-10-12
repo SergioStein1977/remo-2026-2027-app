@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remo 2026–2027 · Registro diario</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172b3b;background:#edf3f6}*{box-sizing:border-box}body{margin:0;padding:24px 14px}main{max-width:480px;margin:auto;background:white;padding:24px;border-radius:20px;box-shadow:0 8px 30px #102b3f12}h1{font-size:1.3rem}.session{background:#f1f6f8;border-radius:12px;padding:16px;margin:20px 0}.muted,small{color:#536779;font-size:.87rem}fieldset{border:0;border-top:1px solid #e4eaf0;padding:18px 0;margin:0}legend{font-weight:650;padding-top:18px}label{display:block;margin:11px 0}input[type=radio]{accent-color:#116c91;margin-right:9px}input[type=range]{width:100%;accent-color:#116c91}textarea{width:100%;padding:12px;border:1px solid #cbd6df;border-radius:10px;font:inherit;min-height:75px}button{width:100%;padding:14px;border:0;border-radius:12px;background:#126c91;color:white;font:inherit;font-weight:650;cursor:pointer}#feedback{padding-top:12px}small{display:block;line-height:1.5;margin-top:13px}
+</style></head><body><main>
+<h1>🌊 Remo 2026–2027</h1><section class="session"><strong>Entrenamiento del día</strong><p class="muted">La vinculación automática con Concept2/Garmin estará disponible más adelante.</p></section>
+<form id="registro">
+<fieldset><legend>¿Cómo has dormido?</legend><label><input type="radio" name="sueno" value="bien" required>Bien</label><label><input type="radio" name="sueno" value="regular" checked>Regular</label><label><input type="radio" name="sueno" value="mal">Mal</label></fieldset>
+<fieldset><legend>Fatiga antes de entrenar</legend><label><input type="radio" name="fatiga" value="1">1 · Descansado</label><label><input type="radio" name="fatiga" value="2">2 · Ligera</label><label><input type="radio" name="fatiga" value="3" checked>3 · Moderada</label><label><input type="radio" name="fatiga" value="4">4 · Alta</label><label><input type="radio" name="fatiga" value="5">5 · Muy alta</label></fieldset>
+<fieldset><legend>Esfuerzo percibido (RPE): <output id="valor-rpe">5</output>/10</legend><input id="rpe" type="range" name="rpe" min="1" max="10" value="5" aria-label="Esfuerzo percibido"><div class="muted">1 = muy suave · 10 = máximo</div></fieldset>
+<fieldset><legend>¿Has tenido molestias o dolor?</legend><label><input type="radio" name="molestias" value="no" checked>No</label><label><input type="radio" name="molestias" value="si">Sí</label></fieldset>
+<label for="observaciones"><strong>Observaciones (opcional)</strong></label><textarea id="observaciones" name="observaciones" placeholder="Sensaciones, recuperación, circunstancias especiales..."></textarea>
+<button type="submit">Probar registro</button><div id="feedback" role="status" aria-live="polite"></div><small>Demostración: las respuestas no se guardan ni se transmiten. No introduzcas información personal o médica en esta prueba.</small>
+</form></main><script>const rpe=document.getElementById('rpe');rpe.addEventListener('input',()=>document.getElementById('valor-rpe').textContent=rpe.value);document.getElementById('registro').addEventListener('submit',event=>{event.preventDefault();document.getElementById('feedback').textContent='✓ Formulario comprobado. Este prototipo todavía no guarda ni transmite tus respuestas.';});</script></body></html>
